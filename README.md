@@ -1,4 +1,4 @@
-# < / > Matheus Ferraz — Full Stack Developer Portfolio
+# Matheus Ferraz — Portfólio Full Stack
 
 <div align="center">
 
@@ -6,90 +6,60 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![GSAP](https://img.shields.io/badge/GSAP_ScrollTrigger-88CE02?style=for-the-badge&logo=greensock&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
-**Single Page Application (SPA) minimalista, de alta performance e orientada a dados, desenvolvida para demonstrar competências de Engenharia de Software e Soluções Full Stack ponta a ponta.**
+**Meu portfólio pessoal e interativo, construído para apresentar minha trajetória, serviços recentes e principais tecnologias de trabalho como Desenvolvedor Full Stack.**
 
-[Visão Geral](#-visão-geral) • [Destaques do Projeto](#-destaques-do-projeto) • [Tech Stack](#-tech-stack--ecossistema) • [Estrutura](#-estrutura-do-projeto) • [Como Rodar](#-como-rodar-localmente) • [Contato](#-contato)
+[Sobre o Projeto](#-sobre-o-projeto) • [Estrutura do Projeto](#-estrutura-do-projeto) • [Como Rodar](#-como-rodar-localmente) • [Contato](#-contato)
 
 ---
 
 </div>
 
-## 🎯 Visão Geral
+## 👋 Sobre o Projeto
 
-O **Portfólio FerrazDev** foi projetado do zero para refletir o posicionamento de **Desenvolvedor Full Stack Pleno**, com foco em criação, sustentação e escala de aplicações digitais robustas. 
+Olá! Este é o repositório do meu portfólio profissional. A ideia principal aqui é apresentar de forma clara e direta quem eu sou, como penso arquitetura de software e quais soluções entrego no dia a dia como **Desenvolvedor Full Stack**.
 
-A interface combina uma estética **Dark Mode Sóbria e Minimalista** com animações de rolagem fluidas e coreografadas pelo **GSAP ScrollTrigger**, garantindo uma experiência interativa, profissional e livre de distrações visuais ou jargões acadêmicos.
+O site foi pensado como uma **Single Page Application (SPA)** leve e agradável de navegar. Optei por um visual minimalista e escuro (*Dark Mode*), complementado por animações de rolagem suaves criadas com **GSAP**, para que a leitura seja fluida e o foco esteja no que realmente importa: **código bem feito, estabilidade e experiência do usuário**.
 
----
-
-## ✨ Destaques do Projeto
-
-- **⚡ Alta Performance & SPA Sólida:** Arquitetada com React + Vite, garantindo tempos de resposta instantâneos e carregamento otimizado de pacotes e ícones vetoriais.
-- **🎨 Design System Minimalista & Dark Mode:** Paleta escura inspirada em terminais de engenharia (`Obsidian/Carbon`), contrastando com tons de azul celeste e ciano (`#38bdf8` / `#06b6d4`).
-- **🎬 Animações GSAP Coreografadas:** Efeitos de revelação e *staggers* (`ScrollTrigger` e `useGSAP`) calibrados com precisão para guiar a atenção do usuário durante a navegação por seções.
-- **🖥️ Terminal Interativo Windows PowerShell:** Seção de contato inovadora simulando um terminal PowerShell real com comandos `npm run role`, `npm run status` e `npm run audit-stack`.
-- **📐 Logo Tech Customizada (`< / >`):** Ícone em SVG puro desenhado especificamente para o projeto, integrando camadas de código, brackets e indicador de pulso de servidor ativo (`#10b981`).
-
----
-
-## 🛠️ Tech Stack & Ecossistema
-
-O portfólio destaca competências em **12 tecnologias consolidadas** da indústria para o desenvolvimento e operação de sistemas modernos e legados:
-
-| Categoria | Tecnologias Principal |
-| :--- | :--- |
-| **Linguagens & Front-end** | React, JavaScript (ES6+), TypeScript |
-| **Back-end & APIs RESTful** | Node.js, PHP, WordPress |
-| **Bancos de Dados (SQL & NoSQL)** | PostgreSQL, MySQL, MongoDB |
-| **DevOps, Nuvem & Versionamento** | Docker, Git, Bitbucket, Cloudflare |
+Aqui você encontrará um resumo da minha experiência unindo o ecossistema moderno de **JavaScript/TypeScript (React e Node.js)** à sustentação e evolução de arquiteturas consolidadas em **PHP, WordPress** e bancos de dados relacionais e NoSQL (**PostgreSQL, MySQL e MongoDB**).
 
 ---
 
 ## 📁 Estrutura do Projeto
 
-A arquitetura do código preza pela modularidade e separação de responsabilidades (dados centralizados vs. apresentação):
+Organizei o código de forma modular e limpa para facilitar a leitura e a manutenção. A separação entre os dados/conteúdos do site e os componentes visuais permite que qualquer alteração de texto seja feita em um único lugar:
 
 ```text
 d:\Projetos\ferrazdev\
 ├── public/
-│   └── favicon.svg              # Logo vetorial tech (< / > com indicador de status)
+│   └── favicon.svg              # Logo vetorial tech (< / >)
 ├── src/
 │   ├── components/
-│   │   ├── Navbar.tsx           # Navegação fixa com indicador de status animado
-│   │   ├── Hero.tsx             # Apresentação principal com badges de stack
-│   │   ├── About.tsx            # Background técnico e princípios de engenharia
-│   │   ├── Solutions.tsx        # Grid com 4 pilares de atuação (Front, Back, DB, DevOps)
-│   │   ├── RecentWork.tsx       # Casos de estudo e serviços entregues em produção
-│   │   ├── TechStack.tsx        # Grid categorizado + Marquee infinita animada
-│   │   ├── Contact.tsx          # Canais diretos + Terminal Windows PowerShell
-│   │   └── Footer.tsx           # Rodapé dinâmico e botão de retorno ao topo
+│   │   ├── Navbar.tsx           # Barra de navegação e indicador de status
+│   │   ├── Hero.tsx             # Seção inicial de apresentação
+│   │   ├── About.tsx            # Minha visão de trabalho e background prático
+│   │   ├── Solutions.tsx        # O que eu faço (Front-end, Back-end, Banco e Infra)
+│   │   ├── RecentWork.tsx       # Principais serviços e projetos entregues
+│   │   ├── TechStack.tsx        # Todas as ferramentas do meu dia a dia
+│   │   ├── Contact.tsx          # Meus contatos + Terminal interativo PowerShell
+│   │   └── Footer.tsx           # Rodapé do site
 │   ├── data/
-│   │   └── content.ts           # Fonte única de verdade (conteúdos, dados e links)
-│   ├── App.tsx                  # Orquestrador SPA e inicialização de plugins GSAP
-│   ├── main.tsx                 # Ponto de entrada React + DOM render
-│   └── index.css                # Design tokens, utilitários e animações CSS puras
-├── index.html                   # HTML base otimizado para SEO
-├── package.json                 # Dependências e scripts npm
-├── tailwind.config.js           # Configurações do Tailwind CSS
-└── tsconfig.json                # Configurações rigorosas do TypeScript
+│   │   └── content.ts           # Fonte única de verdade (textos, links e dados)
+│   ├── App.tsx                  # Componente principal que une todas as seções
+│   ├── main.tsx                 # Ponto de entrada da aplicação
+│   └── index.css                # Estilos globais e utilitários Tailwind
+├── index.html                   # Estrutura base da página
+└── package.json                 # Configurações e scripts do projeto
 ```
 
 ---
 
 ## 🚀 Como Rodar Localmente
 
-### Pré-requisitos
-- [Node.js](https://nodejs.org/) (versão 18+ recomendada)
-- [npm](https://www.npmjs.com/) ou `pnpm` / `yarn`
-
-### Passo a Passo
+Se você quiser clonar este projeto para dar uma olhada no código rodando na sua máquina, o processo é bem simples:
 
 1. **Clone o repositório:**
    ```bash
@@ -102,13 +72,13 @@ d:\Projetos\ferrazdev\
    npm install
    ```
 
-3. **Inicie o servidor de desenvolvimento:**
+3. **Rode o servidor de desenvolvimento:**
    ```bash
    npm run dev
    ```
-   > Acesse no navegador: `http://localhost:5173`
+   > Depois disso, basta abrir o seu navegador em `http://localhost:5173`.
 
-4. **Para gerar o build de produção (`dist/`):**
+4. **Para gerar a versão final de produção:**
    ```bash
    npm run build
    ```
@@ -117,7 +87,7 @@ d:\Projetos\ferrazdev\
 
 ## 📬 Contato
 
-Prontidão operacional ativa para desafios técnicos de engenharia de software, arquitetura web e colaborações estratégicas:
+Se você quiser bater um papo sobre tecnologia, trocar ideias ou falar sobre alguma oportunidade ou projeto, sinta-se à vontade para me chamar em qualquer um dos canais abaixo:
 
 - **E-mail:** [matheusferraz.sp@gmail.com](mailto:matheusferraz.sp@gmail.com)
 - **LinkedIn:** [linkedin.com/in/matheusferrazsp](https://www.linkedin.com/in/matheusferrazsp)
@@ -126,6 +96,5 @@ Prontidão operacional ativa para desafios técnicos de engenharia de software, 
 
 <div align="center">
   <br />
-  <p>Arquitetado e desenvolvido por <b>Matheus Oliveira Ferraz</b></p>
-  <p>© 2026 Todos os direitos reservados.</p>
+  <p>Feito com dedicação por <b>Matheus Oliveira Ferraz</b></p>
 </div>
