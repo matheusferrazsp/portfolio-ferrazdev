@@ -1,21 +1,21 @@
-import React, { useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
-import { PERSONAL_INFO } from '../data/content';
-import { Mail, MessageSquare, ArrowUpRight } from 'lucide-react';
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import { PERSONAL_INFO } from "../data/content";
+import { Mail, MessageSquare, ArrowUpRight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 // Custom High-Contrast SVGs for brand icons removed from lucide-react
 const LinkedinIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className={className}
   >
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -25,13 +25,13 @@ const LinkedinIcon: React.FC<{ className?: string }> = ({ className }) => (
 );
 
 const GithubIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className={className}
   >
     <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
@@ -42,24 +42,27 @@ const GithubIcon: React.FC<{ className?: string }> = ({ className }) => (
 export const Contact: React.FC = () => {
   const containerRef = useRef<HTMLElement>(null);
 
-  useGSAP(() => {
-    // Parallax effect and gradual reveal on scroll near bottom of page
-    const elements = gsap.utils.toArray('.contact-anim');
-    gsap.from(elements, {
-      opacity: 0,
-      y: 60,
-      duration: 1.1,
-      stagger: 0.15,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 85%',
-        end: 'bottom 20%',
-        toggleActions: 'play none none none',
-      },
-      clearProps: 'all'
-    });
-  }, { scope: containerRef });
+  useGSAP(
+    () => {
+      // Parallax effect and gradual reveal on scroll near bottom of page
+      const elements = gsap.utils.toArray(".contact-anim");
+      gsap.from(elements, {
+        opacity: 0,
+        y: 60,
+        duration: 1.1,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 85%",
+          end: "bottom 20%",
+          toggleActions: "play none none none",
+        },
+        clearProps: "all",
+      });
+    },
+    { scope: containerRef },
+  );
 
   const contactOptions = [
     {
@@ -68,37 +71,39 @@ export const Contact: React.FC = () => {
       value: "Iniciar Conversa ->",
       href: PERSONAL_INFO.socials.whatsapp,
       icon: MessageSquare,
-      accent: "hover:border-emerald-500/50 hover:bg-emerald-500/5 text-emerald-400"
+      accent:
+        "hover:border-emerald-500/50 hover:bg-emerald-500/5 text-emerald-400",
     },
     {
       name: "E-mail Profissional",
       desc: "Propostas técnicas, arquitetura de sistemas e consultoria",
-      value: "contato@ferrazdev.com.br",
+      value: "contatomatheus.oferraz@gmail.com",
       href: PERSONAL_INFO.socials.email,
       icon: Mail,
-      accent: "hover:border-sky-500/50 hover:bg-sky-500/5 text-sky-400"
+      accent: "hover:border-sky-500/50 hover:bg-sky-500/5 text-sky-400",
     },
     {
       name: "LinkedIn",
       desc: "Conexão profissional, publicações e rede de contatos",
-      value: "linkedin.com/in/matheus-oliveira-ferraz",
+      value: "linkedin.com/in/matheusferrazsp",
       href: PERSONAL_INFO.socials.linkedin,
       icon: LinkedinIcon,
-      accent: "hover:border-blue-500/50 hover:bg-blue-500/5 text-blue-400"
+      accent: "hover:border-blue-500/50 hover:bg-blue-500/5 text-blue-400",
     },
     {
       name: "GitHub",
       desc: "Repositórios de estudos em arquitetura e algoritmos",
-      value: "github.com/matheusferraz",
+      value: "github.com/matheusferrazsp",
       href: PERSONAL_INFO.socials.github,
       icon: GithubIcon,
-      accent: "hover:border-purple-500/50 hover:bg-purple-500/5 text-purple-400"
-    }
+      accent:
+        "hover:border-purple-500/50 hover:bg-purple-500/5 text-purple-400",
+    },
   ];
 
   return (
-    <section 
-      id="contatos" 
+    <section
+      id="contatos"
       ref={containerRef}
       className="py-28 bg-[#070709] relative overflow-hidden"
     >
@@ -116,7 +121,9 @@ export const Contact: React.FC = () => {
             <span className="text-gradient">Sólidas e Escaláveis</span>
           </h2>
           <p className="text-slate-400 text-base sm:text-lg mt-3 max-w-2xl font-light">
-            Estou disponível para discussões arquiteturais, consultoria em integrações complexas e desenvolvimento de sistemas críticos. Escolha o canal de sua preferência:
+            Estou disponível para discussões arquiteturais, consultoria em
+            integrações complexas e desenvolvimento de sistemas críticos.
+            Escolha o canal de sua preferência:
           </p>
         </div>
 
@@ -146,10 +153,12 @@ export const Contact: React.FC = () => {
                     {opt.desc}
                   </p>
                 </div>
-                
+
                 <div className="mt-6 pt-4 border-t border-[#1a2030] font-mono text-xs font-medium text-slate-300 flex items-center justify-between">
                   <span>{opt.value}</span>
-                  <span className="text-[10px] text-slate-500 group-hover:text-slate-300">[Conectar]</span>
+                  <span className="text-[10px] text-slate-500 group-hover:text-slate-300">
+                    [Conectar]
+                  </span>
                 </div>
               </a>
             );
@@ -165,12 +174,29 @@ export const Contact: React.FC = () => {
             <span className="ml-2">terminal@ferrazdev:~$ status</span>
           </div>
           <div className="space-y-2 text-slate-400">
-            <p><span className="text-sky-400">matheus@ferrazdev:~$</span> echo $ROLE</p>
-            <p className="text-white font-semibold">{"->"} Desenvolvedor Full Stack Pleno</p>
-            <p><span className="text-sky-400">matheus@ferrazdev:~$</span> echo $CURRENT_STATUS</p>
-            <p className="text-emerald-400">{"->"} Prontidão Operacional: Ativa. Aberto a novos desafios técnicos e colaborações estratégicas.</p>
-            <p><span className="text-sky-400">matheus@ferrazdev:~$</span> ping -c 1 stack.ferrazdev.dev</p>
-            <p className="text-slate-500">{"->"} 64 bytes from ferrazdev (127.0.0.1): icmp_seq=1 ttl=64 time=0.18 ms [100% Reliability]</p>
+            <p>
+              <span className="text-sky-400">matheus@ferrazdev:~$</span> echo
+              $ROLE
+            </p>
+            <p className="text-white font-semibold">
+              {"->"} Desenvolvedor Full Stack
+            </p>
+            <p>
+              <span className="text-sky-400">matheus@ferrazdev:~$</span> echo
+              $CURRENT_STATUS
+            </p>
+            <p className="text-emerald-400">
+              {"->"} Prontidão Operacional: Ativa. Aberto a novos desafios
+              técnicos e colaborações estratégicas.
+            </p>
+            <p>
+              <span className="text-sky-400">matheus@ferrazdev:~$</span> ping -c
+              1 stack.ferrazdev.dev
+            </p>
+            <p className="text-slate-500">
+              {"->"} 64 bytes from ferrazdev (127.0.0.1): icmp_seq=1 ttl=64
+              time=0.18 ms [100% Reliability]
+            </p>
           </div>
         </div>
       </div>
