@@ -11,24 +11,22 @@ export const About: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {
-    const mm = gsap.matchMedia();
-    mm.add("(min-width: 768px)", () => {
-      // Reveal text block and cards when section enters viewport on desktop/tablet
-      const items = gsap.utils.toArray('.about-reveal');
-      gsap.from(items, {
-        opacity: 0,
-        y: 25,
-        duration: 0.55,
-        stagger: 0.06,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 92%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none none',
-        },
-        clearProps: 'all'
-      });
+    // Reveal text block and cards when section enters viewport
+    const items = gsap.utils.toArray('.about-reveal');
+    gsap.from(items, {
+      opacity: 0,
+      y: 25,
+      duration: 0.55,
+      stagger: 0.06,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top 92%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none none',
+        fastScrollEnd: true,
+      },
+      clearProps: 'all'
     });
   }, { scope: sectionRef });
 

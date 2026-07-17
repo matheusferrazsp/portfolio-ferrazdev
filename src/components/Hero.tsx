@@ -21,16 +21,13 @@ export const Hero: React.FC = () => {
         clearProps: "all",
       });
 
-      const mm = gsap.matchMedia();
-      mm.add("(min-width: 768px)", () => {
-        // Subtle floating animation for background glow on desktop only
-        gsap.to(".hero-glow", {
-          opacity: 0.7,
-          duration: 4,
-          repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut",
-        });
+      // Subtle floating animation for background glow across all screen sizes
+      gsap.to(".hero-glow", {
+        opacity: 0.7,
+        duration: 4,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
       });
     },
     { scope: containerRef },

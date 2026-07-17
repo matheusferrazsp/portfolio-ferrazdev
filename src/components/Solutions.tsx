@@ -11,25 +11,23 @@ export const Solutions: React.FC = () => {
   const containerRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {
-    const mm = gsap.matchMedia();
-    mm.add("(min-width: 768px)", () => {
-      // Staggered reveal of solution cards when entering viewport on desktop
-      const cards = gsap.utils.toArray('.solution-card');
-      
-      gsap.from(cards, {
-        opacity: 0,
-        y: 25,
-        duration: 0.55,
-        stagger: 0.06,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 92%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none none',
-        },
-        clearProps: 'all'
-      });
+    // Staggered reveal of solution cards when entering viewport
+    const cards = gsap.utils.toArray('.solution-card');
+    
+    gsap.from(cards, {
+      opacity: 0,
+      y: 25,
+      duration: 0.55,
+      stagger: 0.06,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 92%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none none',
+        fastScrollEnd: true,
+      },
+      clearProps: 'all'
     });
   }, { scope: containerRef });
 

@@ -12,25 +12,23 @@ export const RecentWork: React.FC = () => {
 
   useGSAP(
     () => {
-      const mm = gsap.matchMedia();
-      mm.add("(min-width: 768px)", () => {
-        // Staggered reveal of recent work cards when entering viewport on desktop
-        const cards = gsap.utils.toArray(".recent-card");
+      // Staggered reveal of recent work cards when entering viewport
+      const cards = gsap.utils.toArray(".recent-card");
 
-        gsap.from(cards, {
-          opacity: 0,
-          y: 25,
-          duration: 0.55,
-          stagger: 0.06,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 92%",
-            end: "bottom 20%",
-            toggleActions: "play none none none",
-          },
-          clearProps: "all",
-        });
+      gsap.from(cards, {
+        opacity: 0,
+        y: 25,
+        duration: 0.55,
+        stagger: 0.06,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 92%",
+          end: "bottom 20%",
+          toggleActions: "play none none none",
+          fastScrollEnd: true,
+        },
+        clearProps: "all",
       });
     },
     { scope: containerRef },

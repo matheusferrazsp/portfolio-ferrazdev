@@ -44,24 +44,22 @@ export const Contact: React.FC = () => {
 
   useGSAP(
     () => {
-      const mm = gsap.matchMedia();
-      mm.add("(min-width: 768px)", () => {
-        // Staggered reveal of contact elements on desktop
-        const elements = gsap.utils.toArray(".contact-anim");
-        gsap.from(elements, {
-          opacity: 0,
-          y: 25,
-          duration: 0.55,
-          stagger: 0.06,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 92%",
-            end: "bottom 20%",
-            toggleActions: "play none none none",
-          },
-          clearProps: "all",
-        });
+      // Staggered reveal of contact elements across all devices
+      const elements = gsap.utils.toArray(".contact-anim");
+      gsap.from(elements, {
+        opacity: 0,
+        y: 25,
+        duration: 0.55,
+        stagger: 0.06,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 92%",
+          end: "bottom 20%",
+          toggleActions: "play none none none",
+          fastScrollEnd: true,
+        },
+        clearProps: "all",
       });
     },
     { scope: containerRef },
