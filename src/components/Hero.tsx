@@ -9,15 +9,15 @@ export const Hero: React.FC = () => {
 
   useGSAP(
     () => {
-      // GSAP entrance animation right on mount
+      // GSAP entrance animation right on mount (elegant cinematic pacing)
       const elements = gsap.utils.toArray(".hero-anim");
       gsap.from(elements, {
         opacity: 0,
-        y: 25,
-        duration: 0.55,
-        stagger: 0.05,
-        ease: "power2.out",
-        delay: 0.02,
+        y: 35,
+        duration: 0.85,
+        stagger: 0.12,
+        ease: "power3.out",
+        delay: 0.08,
         clearProps: "all",
       });
 
