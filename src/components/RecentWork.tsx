@@ -1,38 +1,41 @@
-import React, { useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
-import { RECENT_WORK_DATA } from '../data/content';
-import { Terminal, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import { RECENT_WORK_DATA } from "../data/content";
+import { Terminal, ArrowUpRight, CheckCircle2 } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const RecentWork: React.FC = () => {
   const containerRef = useRef<HTMLElement>(null);
 
-  useGSAP(() => {
-    // Staggered reveal of recent work cards when entering viewport
-    const cards = gsap.utils.toArray('.recent-card');
-    
-    gsap.from(cards, {
-      opacity: 0,
-      y: 45,
-      duration: 0.95,
-      stagger: 0.16,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 78%',
-        end: 'bottom 20%',
-        toggleActions: 'play none none none',
-      },
-      clearProps: 'all'
-    });
-  }, { scope: containerRef });
+  useGSAP(
+    () => {
+      // Staggered reveal of recent work cards when entering viewport
+      const cards = gsap.utils.toArray(".recent-card");
+
+      gsap.from(cards, {
+        opacity: 0,
+        y: 45,
+        duration: 0.95,
+        stagger: 0.16,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 78%",
+          end: "bottom 20%",
+          toggleActions: "play none none none",
+        },
+        clearProps: "all",
+      });
+    },
+    { scope: containerRef },
+  );
 
   return (
-    <section 
-      id="servicos" 
+    <section
+      id="servicos"
       ref={containerRef}
       className="py-28 bg-[#090b0f] border-b border-[#161a24] relative overflow-hidden"
     >
@@ -43,14 +46,16 @@ export const RecentWork: React.FC = () => {
         {/* Section Header */}
         <div className="mb-16">
           <span className="font-mono text-xs tracking-[0.2em] text-sky-400 uppercase font-semibold block mb-2">
-            03 // ÚLTIMOS SERVIÇOS & CASOS DE USO
+            03 // ÚLTIMOS PROJETOS & CASOS DE USO
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight font-sans">
             Projetos em Destaque & <br className="hidden sm:inline" />
             <span className="text-gradient">Entregas de Alto Impacto</span>
           </h2>
           <p className="text-slate-400 text-base sm:text-lg mt-3 max-w-3xl font-light leading-relaxed">
-            Exemplos práticos de problemas complexos que resolvi recentemente, desde orquestração de APIs e automação comercial até refatoração de sistemas corporativos e soluções de alta disponibilidade.
+            Exemplos práticos de problemas complexos que resolvi recentemente,
+            desde orquestração de APIs e automação comercial até refatoração de
+            sistemas corporativos e soluções de alta disponibilidade.
           </p>
         </div>
 
@@ -59,7 +64,7 @@ export const RecentWork: React.FC = () => {
           {RECENT_WORK_DATA.map((work, index) => {
             const IconComponent = work.icon;
             return (
-              <div 
+              <div
                 key={work.id}
                 className="recent-card group relative p-7 sm:p-8 rounded bg-[#10131c] border border-[#1e2536] hover:border-sky-500/50 hover:bg-[#131724] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(56,189,248,0.12)] flex flex-col justify-between"
               >
@@ -98,7 +103,7 @@ export const RecentWork: React.FC = () => {
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {work.technologies.map((tech, tIdx) => (
-                      <span 
+                      <span
                         key={tIdx}
                         className="px-2.5 py-1 rounded bg-[#161b28] border border-[#232c40] text-slate-300 font-mono text-[11px] group-hover:border-sky-500/30 group-hover:text-white transition-colors"
                       >
@@ -123,10 +128,13 @@ export const RecentWork: React.FC = () => {
             </div>
             <div>
               <h4 className="font-sans text-base sm:text-lg font-bold text-white">
-                Precisa de uma Solução Customizada ou Evolução de Sistema Legado?
+                Precisa de uma Solução Customizada ou Evolução de Sistema
+                Legado?
               </h4>
               <p className="text-xs sm:text-sm text-slate-400 font-light mt-1 max-w-2xl">
-                Atuo desde a análise arquitetural de gargalos e modelagem relacional de banco de dados até a entrega em produção com monitoramento na borda.
+                Atuo desde a análise arquitetural de gargalos e modelagem
+                relacional de banco de dados até a entrega em produção com
+                monitoramento na borda.
               </p>
             </div>
           </div>

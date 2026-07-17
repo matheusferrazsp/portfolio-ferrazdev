@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { PERSONAL_INFO } from '../data/content';
-import { Terminal, ArrowUp } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,15 +37,19 @@ export const Footer: React.FC = () => {
       <div className="footer-content max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
         {/* Left: Brand Identity */}
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded bg-[#10131c] border border-[#1e2536] flex items-center justify-center text-sky-400">
-            <Terminal className="w-4 h-4" />
+          <div className="w-8 h-8 rounded bg-[#10131c] border border-[#1e2536] flex items-center justify-center text-sky-400 overflow-hidden p-1">
+            <img
+              src="/favicon.svg"
+              alt="Dev Logo"
+              className="w-full h-full object-contain"
+            />
           </div>
           <div>
             <span className="font-semibold text-slate-200 uppercase tracking-wider block">
               {PERSONAL_INFO.name}
             </span>
             <span className="text-[11px] text-slate-500 font-sans">
-              Desenvolvedor Full Stack & Engenharia de Software
+              {PERSONAL_INFO.role}
             </span>
           </div>
         </div>

@@ -79,7 +79,7 @@ export const Hero: React.FC = () => {
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded bg-[#10131d] hover:bg-[#161b2a] border border-[#22283a] hover:border-slate-500 text-slate-300 hover:text-white font-mono text-xs sm:text-sm font-medium transition-all duration-300"
           >
             <Terminal className="w-4 h-4 text-sky-400" />
-            <span>Ver Últimos Serviços</span>
+            <span>Ver Últimos Projetos</span>
           </a>
         </div>
 
@@ -114,7 +114,7 @@ export const Hero: React.FC = () => {
                 Banco de Dados
               </h3>
               <p className="text-[11px] text-slate-500 mt-0.5 font-sans">
-                PostgreSQL e MySQL
+                PostgreSQL, MySQL e MongoDB
               </p>
             </div>
           </div>

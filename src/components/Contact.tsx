@@ -167,36 +167,60 @@ export const Contact: React.FC = () => {
 
         {/* Quick Engineering Terminal Box */}
         <div className="contact-anim p-6 sm:p-8 rounded bg-[#0b0e14] border border-[#1b2232] font-mono text-xs sm:text-sm text-slate-300 shadow-xl">
-          <div className="flex items-center gap-2 mb-4 pb-3 border-b border-[#1b2232] text-slate-500 text-[11px]">
+          <div className="flex items-center gap-2 mb-5 pb-3 border-b border-[#1b2232] text-slate-500 text-[11px] select-none">
             <div className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
             <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
             <div className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
-            <span className="ml-2">terminal@ferrazdev:~$ status</span>
+            <span className="ml-2 font-semibold text-slate-400">
+              Windows PowerShell — ferrazdev@portfolio
+            </span>
           </div>
-          <div className="space-y-2 text-slate-400">
-            <p>
-              <span className="text-sky-400">matheus@ferrazdev:~$</span> echo
-              $ROLE
-            </p>
-            <p className="text-white font-semibold">
-              {"->"} Desenvolvedor Full Stack
-            </p>
-            <p>
-              <span className="text-sky-400">matheus@ferrazdev:~$</span> echo
-              $CURRENT_STATUS
-            </p>
-            <p className="text-emerald-400">
-              {"->"} Prontidão Operacional: Ativa. Aberto a novos desafios
-              técnicos e colaborações estratégicas.
-            </p>
-            <p>
-              <span className="text-sky-400">matheus@ferrazdev:~$</span> ping -c
-              1 stack.ferrazdev.dev
-            </p>
-            <p className="text-slate-500">
-              {"->"} 64 bytes from ferrazdev (127.0.0.1): icmp_seq=1 ttl=64
-              time=0.18 ms [100% Reliability]
-            </p>
+          <div className="space-y-4 text-slate-400">
+            <div>
+              <p className="flex flex-wrap items-center gap-1.5 text-slate-200">
+                <span className="text-sky-400 font-semibold">
+                  PS D:\Projetos\ferrazdev&gt;
+                </span>
+                <span>npm run role</span>
+              </p>
+              <p className="text-slate-500 text-[11px] mt-1">
+                &gt; ferrazdev@2.0.0 role
+              </p>
+              <p className="text-white font-semibold mt-0.5">
+                {"->"} {PERSONAL_INFO.role}
+              </p>
+            </div>
+
+            <div>
+              <p className="flex flex-wrap items-center gap-1.5 text-slate-200">
+                <span className="text-sky-400 font-semibold">
+                  PS D:\Projetos\ferrazdev&gt;
+                </span>
+                <span>npm run status</span>
+              </p>
+              <p className="text-slate-500 text-[11px] mt-1">
+                &gt; ferrazdev@2.0.0 status
+              </p>
+              <p className="text-emerald-400 font-medium mt-0.5">
+                {"->"} Prontidão Operacional: Ativa. {PERSONAL_INFO.status}.
+              </p>
+            </div>
+
+            <div>
+              <p className="flex flex-wrap items-center gap-1.5 text-slate-200">
+                <span className="text-sky-400 font-semibold">
+                  PS D:\Projetos\ferrazdev&gt;
+                </span>
+                <span>npm run audit-stack</span>
+              </p>
+              <p className="text-slate-500 text-[11px] mt-1">
+                &gt; ferrazdev@2.0.0 audit-stack
+              </p>
+              <p className="text-slate-400 mt-0.5">
+                {"->"} 0 vulnerabilities found. Stack: React + Node.js + PHP +
+                Docker + Cloudflare [100% Reliability]
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Terminal, Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import { PERSONAL_INFO } from "../data/content";
 
 export const Navbar: React.FC = () => {
@@ -18,7 +18,7 @@ export const Navbar: React.FC = () => {
     { name: "Apresentação", href: "#hero" },
     { name: "Sobre", href: "#sobre" },
     { name: "Competências", href: "#solucoes" },
-    { name: "Últimos Serviços", href: "#servicos" },
+    { name: "Últimos Projetos", href: "#servicos" },
     { name: "Tech Stack", href: "#stack" },
     { name: "Contatos", href: "#contatos" },
   ];
@@ -50,8 +50,12 @@ export const Navbar: React.FC = () => {
           onClick={(e) => handleNavClick(e, "#hero")}
           className="flex items-center gap-3 group text-left"
         >
-          <div className="w-9 h-9 rounded bg-[#111318] border border-[#222834] flex items-center justify-center text-sky-400 group-hover:border-sky-500/50 transition-colors duration-300 shadow-inner">
-            <Terminal className="w-4 h-4 text-sky-400 group-hover:scale-110 transition-transform duration-300" />
+          <div className="w-9 h-9 rounded bg-[#111318] border border-[#222834] flex items-center justify-center text-sky-400 group-hover:border-sky-500/50 transition-colors duration-300 shadow-inner overflow-hidden p-1.5">
+            <img
+              src="/favicon.svg"
+              alt="Dev Logo"
+              className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+            />
           </div>
           <div>
             <span className="font-mono text-xs font-semibold tracking-wider text-slate-400 uppercase block group-hover:text-sky-400 transition-colors">

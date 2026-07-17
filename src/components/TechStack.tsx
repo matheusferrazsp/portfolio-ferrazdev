@@ -45,7 +45,7 @@ export const TechStack: React.FC = () => {
   const categories = [
     { title: "Linguagens & Front-end", filter: ["React", "JavaScript", "TypeScript"] },
     { title: "Back-end & APIs RESTful", filter: ["Node.js", "PHP", "WordPress"] },
-    { title: "Bancos de Dados & Relacional", filter: ["PostgreSQL", "MySQL"] },
+    { title: "Bancos de Dados SQL & NoSQL", filter: ["PostgreSQL", "MySQL", "MongoDB"] },
     { title: "DevOps, Nuvem & Versionamento", filter: ["Docker", "Git", "Bitbucket", "Cloudflare"] }
   ];
 

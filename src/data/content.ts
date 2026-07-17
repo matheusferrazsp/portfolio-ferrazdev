@@ -31,7 +31,7 @@ export const ABOUT_DATA = {
     "Experiência consolidada ponta a ponta, unindo ecossistema moderno JavaScript a sistemas legados e em produção com PHP e WordPress.",
   paragraphs: [
     "Atuando como Desenvolvedor Full Stack, foco em criar e escalar aplicações web ponta a ponta. Trago experiência sólida tanto na construção de aplicações modernas com ecossistema JavaScript (Node.js/React) quanto na sustentação e evolução de arquiteturas consolidadas em PHP e WordPress.",
-    "Minha abordagem alia sólida formação acadêmica — em Engenharia de Software e Análise e Desenvolvimento de Sistemas (ADS) — a uma visão pragmática voltada à estabilidade, manutenibilidade e entrega contínua de valor. Atuo em todas as etapas de um produto digital: desde a modelagem de dados até a publicação em produção e manutenção evolutiva.",
+    "Minha abordagem alia uma visão pragmática voltada à estabilidade, manutenibilidade e entrega contínua de valor com forte domínio técnico na prática. Atuo em todas as etapas de um produto digital: desde a modelagem de dados até a publicação em produção e manutenção evolutiva.",
     "Acredito que um software de excelência requer interfaces limpas, responsivas e fluidas no front-end, sustentadas por back-ends seguros, APIs RESTful bem estruturadas e uma infraestrutura monitorada e resiliente.",
   ],
   principles: [
@@ -47,8 +47,8 @@ export const ABOUT_DATA = {
     },
     {
       icon: Database,
-      title: "Modelagem Relacional",
-      desc: "Design de bancos de dados, garantia de integridade transacional e otimização de consultas com PostgreSQL e MySQL.",
+      title: "Modelagem de Bancos de Dados",
+      desc: "Design de bancos de dados relacionais e NoSQL, garantia de integridade transacional e otimização com PostgreSQL, MySQL e MongoDB.",
     },
     {
       icon: Cloud,
@@ -92,11 +92,11 @@ export const SOLUTIONS_DATA = [
     title: "Banco de Dados",
     category: "Persistência & Modelagem",
     description:
-      "Modelagem relacional, otimização de consultas e garantia de integridade de dados utilizando PostgreSQL e MySQL.",
+      "Modelagem relacional e NoSQL, otimização de consultas e garantia de integridade de dados utilizando PostgreSQL, MySQL e MongoDB.",
     icon: Database,
     highlights: [
-      "Modelagem Relacional Sólida",
-      "PostgreSQL & MySQL",
+      "Modelagem Relacional & NoSQL Sólida",
+      "PostgreSQL, MySQL & MongoDB",
       "Otimização de Consultas (Tuning)",
       "Integridade de Dados & ACID",
     ],
@@ -200,6 +200,12 @@ export const TECH_STACK = [
   },
   {
     name: "MySQL",
+    category: "Bancos de Dados",
+    level: "Avançado",
+    icon: Database,
+  },
+  {
+    name: "MongoDB",
     category: "Bancos de Dados",
     level: "Avançado",
     icon: Database,

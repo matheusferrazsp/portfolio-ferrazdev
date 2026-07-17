@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { ABOUT_DATA } from '../data/content';
-import { BookOpen, Award } from 'lucide-react';
+import { Award } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,19 +61,6 @@ export const About: React.FC = () => {
                 {para}
               </p>
             ))}
-
-            {/* Academic Credentials Box */}
-            <div className="about-reveal p-6 rounded bg-[#10131c] border border-[#1e2536] flex items-start gap-4 mt-8 shadow-md">
-              <div className="p-3 rounded bg-sky-500/10 border border-sky-500/20 text-sky-400 shrink-0">
-                <BookOpen className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="font-mono text-sm font-semibold text-white">Base Acadêmica em Formação Contínua</h3>
-                <p className="text-xs sm:text-sm text-slate-400 mt-1 leading-relaxed">
-                  Engenharia de Software & Análise e Desenvolvimento de Sistemas (ADS). Foco prático em padrões de projeto, arquitetura orientada a domínio (DDD) e estruturas de dados otimizadas.
-                </p>
-              </div>
-            </div>
           </div>
 
           {/* Right Column: Engineering Principles & Core Philosophy */}
