@@ -110,8 +110,8 @@ export const Contact: React.FC = () => {
       ref={containerRef}
       className="py-28 bg-[#070709] relative overflow-hidden"
     >
-      {/* Background Subtle Gradient (Hardware accelerated) */}
-      <div className="absolute bottom-0 right-0 w-125 h-125 bg-sky-500/5 rounded-full blur-[150px] pointer-events-none -z-10 transform-gpu" />
+      {/* Background Subtle Gradient (High performance radial-gradient instead of heavy filter blur for WebKit/iPhone 60fps) */}
+      <div className="absolute bottom-0 right-0 w-125 h-125 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.06)_0%,transparent_70%)] rounded-full pointer-events-none -z-10" />
 
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         {/* Section Header */}

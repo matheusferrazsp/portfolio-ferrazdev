@@ -9,7 +9,7 @@ export const Hero: React.FC = () => {
 
   useGSAP(
     () => {
-      // GSAP entrance animation (fast and crisp so mobile/in-app webviews render immediately without long blank screens)
+      // GSAP entrance animation right on mount
       const elements = gsap.utils.toArray(".hero-anim");
       gsap.from(elements, {
         opacity: 0,
@@ -21,13 +21,16 @@ export const Hero: React.FC = () => {
         clearProps: "all",
       });
 
-      // Subtle floating animation for background glow (opacity only to avoid re-blurring on mobile GPU)
-      gsap.to(".hero-glow", {
-        opacity: 0.6,
-        duration: 4,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
+      const mm = gsap.matchMedia();
+      mm.add("(min-width: 768px)", () => {
+        // Subtle floating animation for background glow on desktop only
+        gsap.to(".hero-glow", {
+          opacity: 0.7,
+          duration: 4,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+        });
       });
     },
     { scope: containerRef },
@@ -39,8 +42,8 @@ export const Hero: React.FC = () => {
       ref={containerRef}
       className="relative min-h-[92vh] pt-36 pb-20 flex flex-col justify-center bg-grid-pattern overflow-hidden border-b border-[#161a24]"
     >
-      {/* Background Radial Glow (Hardware accelerated) */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-162.5 h-87.5 bg-sky-500/10 rounded-full blur-[140px] pointer-events-none hero-glow opacity-40 -z-10 transform-gpu will-change-[opacity]" />
+      {/* Background Radial Glow (High performance radial-gradient instead of heavy filter blur for WebKit/iPhone 60fps) */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-162.5 h-87.5 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.12)_0%,transparent_70%)] rounded-full pointer-events-none hero-glow opacity-50 -z-10" />
 
       <div className="max-w-5xl mx-auto px-6 relative z-10 w-full">
         {/* Status Badge */}

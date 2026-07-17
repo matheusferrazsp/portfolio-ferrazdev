@@ -39,8 +39,8 @@ export const Solutions: React.FC = () => {
       ref={containerRef}
       className="py-28 bg-[#070709] border-b border-[#161a24] relative overflow-hidden"
     >
-      {/* Subtle Background Glow (Hardware accelerated) */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-100 bg-sky-500/5 rounded-full blur-[160px] pointer-events-none -z-10 transform-gpu" />
+      {/* Subtle Background Glow (High performance radial-gradient instead of heavy filter blur for WebKit/iPhone 60fps) */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-100 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.06)_0%,transparent_70%)] rounded-full pointer-events-none -z-10" />
 
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         {/* Section Header */}
