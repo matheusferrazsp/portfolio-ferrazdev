@@ -43,14 +43,14 @@ export const Solutions: React.FC = () => {
         {/* Section Header */}
         <div className="mb-16">
           <span className="font-mono text-xs tracking-[0.2em] text-sky-400 uppercase font-semibold block mb-2">
-            02 // SOLUÇÕES DE ENGENHARIA & CORE COMPETENCIES
+            02 // COMPETÊNCIAS & O QUE EU FAÇO
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight font-sans">
-            O Que Eu Faço & <br className="hidden sm:inline" />
-            <span className="text-gradient">Como Resolvo Problemas Complexos</span>
+            Competências Principais & <br className="hidden sm:inline" />
+            <span className="text-gradient">Especialidades Técnicas</span>
           </h2>
           <p className="text-slate-400 text-base sm:text-lg mt-3 max-w-3xl font-light leading-relaxed">
-            Especializado na concepção e implementação de soluções técnicas de ponta a ponta. Abordo cada desafio com foco em estabilidade operacional, segurança e escalabilidade horizontal.
+            Atuação técnica sólida de ponta a ponta, combinando o ecossistema moderno JavaScript a arquiteturas consolidadas em PHP, bancos de dados relacionais e governança DevOps.
           </p>
         </div>
 
@@ -61,7 +61,9 @@ export const Solutions: React.FC = () => {
             return (
               <div 
                 key={solution.id}
-                className="solution-card group relative p-7 sm:p-8 rounded bg-[#0f121a] border border-[#1d2334] hover:border-sky-500/50 hover:bg-[#121622] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(56,189,248,0.12)] flex flex-col justify-between"
+                className={`solution-card group relative p-7 sm:p-8 rounded bg-[#0f121a] border border-[#1d2334] hover:border-sky-500/50 hover:bg-[#121622] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(56,189,248,0.12)] flex flex-col justify-between ${
+                  index === 4 ? 'md:col-span-2' : ''
+                }`}
               >
                 {/* Top Header Card */}
                 <div>

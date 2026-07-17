@@ -109,7 +109,7 @@ export const Contact: React.FC = () => {
         {/* Section Header */}
         <div className="contact-anim mb-16 text-left">
           <span className="font-mono text-xs tracking-[0.2em] text-sky-400 uppercase font-semibold block mb-2">
-            04 // CONEXÃO & CALL TO ACTION
+            05 // CONEXÃO & CALL TO ACTION
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight font-sans">
             Vamos Construir Soluções <br className="hidden sm:inline" />
@@ -165,9 +165,11 @@ export const Contact: React.FC = () => {
             <span className="ml-2">terminal@ferrazdev:~$ status</span>
           </div>
           <div className="space-y-2 text-slate-400">
+            <p><span className="text-sky-400">matheus@ferrazdev:~$</span> echo $ROLE</p>
+            <p className="text-white font-semibold">{"->"} Desenvolvedor Full Stack Pleno</p>
             <p><span className="text-sky-400">matheus@ferrazdev:~$</span> echo $CURRENT_STATUS</p>
             <p className="text-emerald-400">{"->"} Prontidão Operacional: Ativa. Aberto a novos desafios técnicos e colaborações estratégicas.</p>
-            <p><span className="text-sky-400">matheus@ferrazdev:~$</span> ping -c 1 arquitetura.ferrazdev.dev</p>
+            <p><span className="text-sky-400">matheus@ferrazdev:~$</span> ping -c 1 stack.ferrazdev.dev</p>
             <p className="text-slate-500">{"->"} 64 bytes from ferrazdev (127.0.0.1): icmp_seq=1 ttl=64 time=0.18 ms [100% Reliability]</p>
           </div>
         </div>

@@ -43,10 +43,10 @@ export const TechStack: React.FC = () => {
 
   // Categorize tech stack for clean structured presentation
   const categories = [
-    { title: "Linguagens & Runtime Back-end", filter: ["PHP", "Node.js", "TypeScript", "JavaScript (ES6+)"] },
-    { title: "Bancos de Dados & Cache", filter: ["PostgreSQL", "MySQL", "Redis"] },
-    { title: "Infraestrutura, DevOps & Servidores", filter: ["Linux Administration", "Docker", "Nginx", "Git & CI/CD"] },
-    { title: "Ecossistema Front-end & Arquitetura", filter: ["React", "Tailwind CSS", "RESTful APIs / Webhooks"] }
+    { title: "Linguagens & Front-end", filter: ["React", "JavaScript", "TypeScript"] },
+    { title: "Back-end & APIs RESTful", filter: ["Node.js", "PHP", "WordPress"] },
+    { title: "Bancos de Dados & Relacional", filter: ["PostgreSQL", "MySQL"] },
+    { title: "DevOps, Nuvem & Versionamento", filter: ["Docker", "Git", "Bitbucket", "Cloudflare"] }
   ];
 
   return (
@@ -59,7 +59,7 @@ export const TechStack: React.FC = () => {
         {/* Section Header */}
         <div className="mb-14">
           <span className="font-mono text-xs tracking-[0.2em] text-sky-400 uppercase font-semibold block mb-2">
-            03 // ARSENAL TECNOLÓGICO & TOOLS
+            04 // ARSENAL TECNOLÓGICO & TOOLS
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight font-sans">
             Tech Stack & <br className="hidden sm:inline" />

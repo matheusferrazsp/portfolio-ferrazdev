@@ -5,6 +5,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Solutions } from './components/Solutions';
+import { RecentWork } from './components/RecentWork';
 import { TechStack } from './components/TechStack';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
@@ -29,6 +30,7 @@ export function App() {
         <Hero />
         <About />
         <Solutions />
+        <RecentWork />
         <TechStack />
         <Contact />
       </main>

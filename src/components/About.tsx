@@ -81,7 +81,7 @@ export const About: React.FC = () => {
             <div className="about-reveal mb-4">
               <h3 className="font-mono text-xs uppercase tracking-wider text-slate-400 font-semibold flex items-center gap-2">
                 <Award className="w-4 h-4 text-sky-400" />
-                Pilares da Minha Arquitetura
+                Pilares da Minha Atuação
               </h3>
             </div>
             {ABOUT_DATA.principles.map((item, idx) => {

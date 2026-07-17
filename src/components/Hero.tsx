@@ -1,38 +1,41 @@
-import React, { useRef } from 'react';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
-import { ArrowDownRight, Terminal, Shield, Cpu, Layers } from 'lucide-react';
-import { PERSONAL_INFO } from '../data/content';
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ArrowDownRight, Terminal, Shield, Cpu, Layers } from "lucide-react";
+import { PERSONAL_INFO } from "../data/content";
 
 export const Hero: React.FC = () => {
   const containerRef = useRef<HTMLElement>(null);
 
-  useGSAP(() => {
-    // GSAP subtle entrance animation (fade in + vertical upward motion)
-    const elements = gsap.utils.toArray('.hero-anim');
-    gsap.from(elements, {
-      opacity: 0,
-      y: 40,
-      duration: 1.15,
-      stagger: 0.16,
-      ease: 'power3.out',
-      delay: 0.15,
-      clearProps: 'all'
-    });
+  useGSAP(
+    () => {
+      // GSAP subtle entrance animation (fade in + vertical upward motion)
+      const elements = gsap.utils.toArray(".hero-anim");
+      gsap.from(elements, {
+        opacity: 0,
+        y: 40,
+        duration: 1.15,
+        stagger: 0.16,
+        ease: "power3.out",
+        delay: 0.15,
+        clearProps: "all",
+      });
 
-    // Subtle floating animation for background decorative grid highlight
-    gsap.to('.hero-glow', {
-      opacity: 0.6,
-      scale: 1.05,
-      duration: 4,
-      repeat: -1,
-      yoyo: true,
-      ease: 'sine.inOut'
-    });
-  }, { scope: containerRef });
+      // Subtle floating animation for background decorative grid highlight
+      gsap.to(".hero-glow", {
+        opacity: 0.6,
+        scale: 1.05,
+        duration: 4,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+    },
+    { scope: containerRef },
+  );
 
   return (
-    <section 
+    <section
       id="hero"
       ref={containerRef}
       className="relative min-h-[92vh] pt-36 pb-20 flex flex-col justify-center bg-grid-pattern overflow-hidden border-b border-[#161a24]"
@@ -54,8 +57,7 @@ export const Hero: React.FC = () => {
 
         {/* Main Title */}
         <h2 className="hero-anim text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white max-w-4xl leading-[1.12] mb-6 font-sans">
-          Desenvolvedor Full Stack <span className="text-slate-500 font-light">|</span> <br className="hidden sm:inline" />
-          <span className="text-gradient">Especialista em Arquitetura e Integrações</span>
+          Desenvolvedor <span className="text-gradient">Full Stack</span>
         </h2>
 
         {/* Description / Engineering Value Proposition */}
@@ -69,15 +71,15 @@ export const Hero: React.FC = () => {
             href="#solucoes"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded bg-sky-500 hover:bg-sky-400 text-slate-950 font-mono text-xs sm:text-sm font-bold tracking-wide transition-all duration-300 shadow-[0_0_20px_rgba(56,189,248,0.25)] hover:shadow-[0_0_30px_rgba(56,189,248,0.4)] hover:-translate-y-0.5"
           >
-            <span>Explorar Soluções em Engenharia</span>
+            <span>Explorar Competências</span>
             <ArrowDownRight className="w-4 h-4" />
           </a>
           <a
-            href="#contatos"
+            href="#servicos"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded bg-[#10131d] hover:bg-[#161b2a] border border-[#22283a] hover:border-slate-500 text-slate-300 hover:text-white font-mono text-xs sm:text-sm font-medium transition-all duration-300"
           >
             <Terminal className="w-4 h-4 text-sky-400" />
-            <span>Falar com o Especialista</span>
+            <span>Ver Últimos Serviços</span>
           </a>
         </div>
 
@@ -86,29 +88,45 @@ export const Hero: React.FC = () => {
           <div className="flex items-start gap-3">
             <Shield className="w-5 h-5 text-sky-400/80 mt-0.5 shrink-0" />
             <div>
-              <h3 className="font-mono text-xs font-semibold text-slate-200">Alta Confiabilidade</h3>
-              <p className="text-[11px] text-slate-500 mt-0.5 font-sans">Sistemas resilientes e tolerantes a falhas</p>
+              <h3 className="font-mono text-xs font-semibold text-slate-200">
+                Front & Back-end
+              </h3>
+              <p className="text-[11px] text-slate-500 mt-0.5 font-sans">
+                React, Node.js e PHP
+              </p>
             </div>
           </div>
           <div className="flex items-start gap-3">
             <Cpu className="w-5 h-5 text-sky-400/80 mt-0.5 shrink-0" />
             <div>
-              <h3 className="font-mono text-xs font-semibold text-slate-200">Performance Crítica</h3>
-              <p className="text-[11px] text-slate-500 mt-0.5 font-sans">Tuning de queries e latência reduzida</p>
+              <h3 className="font-mono text-xs font-semibold text-slate-200">
+                APIs & Integrações
+              </h3>
+              <p className="text-[11px] text-slate-500 mt-0.5 font-sans">
+                RESTful, Gateways e ERPs
+              </p>
             </div>
           </div>
           <div className="flex items-start gap-3">
             <Layers className="w-5 h-5 text-sky-400/80 mt-0.5 shrink-0" />
             <div>
-              <h3 className="font-mono text-xs font-semibold text-slate-200">Arquitetura Limpa</h3>
-              <p className="text-[11px] text-slate-500 mt-0.5 font-sans">Código desacoplado e manutenível</p>
+              <h3 className="font-mono text-xs font-semibold text-slate-200">
+                Banco de Dados
+              </h3>
+              <p className="text-[11px] text-slate-500 mt-0.5 font-sans">
+                PostgreSQL e MySQL
+              </p>
             </div>
           </div>
           <div className="flex items-start gap-3">
             <Terminal className="w-5 h-5 text-sky-400/80 mt-0.5 shrink-0" />
             <div>
-              <h3 className="font-mono text-xs font-semibold text-slate-200">Integrações Complexas</h3>
-              <p className="text-[11px] text-slate-500 mt-0.5 font-sans">Orquestração assíncrona e webhooks</p>
+              <h3 className="font-mono text-xs font-semibold text-slate-200">
+                DevOps & Infra
+              </h3>
+              <p className="text-[11px] text-slate-500 mt-0.5 font-sans">
+                Docker, Cloudflare e Linux
+              </p>
             </div>
           </div>
         </div>

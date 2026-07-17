@@ -1,6 +1,5 @@
 import {
   Code2,
-  Cpu,
   Database,
   Server,
   Terminal,
@@ -9,20 +8,19 @@ import {
   Cloud,
   Layers,
   GitBranch,
-  Activity,
 } from "lucide-react";
 
 export const PERSONAL_INFO = {
   name: "Matheus Oliveira Ferraz",
-  role: "Desenvolvedor Full Stack | Especialista em Arquitetura e Integrações",
+  role: "Desenvolvedor Full Stack",
   tagline:
-    "Projetando e orquestrando ecossistemas robustos de alto desempenho. Transformo gargalos de integração e complexidade de infraestrutura em arquiteturas escaláveis, seguras e altamente disponíveis.",
-  status: "Disponível para Projetos & Consultoria em Arquitetura",
+    "Focado em criar e escalar aplicações web ponta a ponta. Trago experiência sólida tanto na construção de aplicações modernas com ecossistema JavaScript (Node.js/React) quanto na sustentação e evolução de arquiteturas consolidadas em PHP e WordPress. Atuo desde a modelagem do banco de dados até o deploy e gestão da infraestrutura.",
+  status: "Disponível para Projetos & Oportunidades como Full Stack",
   location: "Brasil",
   socials: {
-    whatsapp: "https://wa.me/5511921848879", // Link configurável
-    email: "mailto:contatomatheus.oferraz@gmail.com", // E-mail profissional configurável
-    linkedin: "https://www.linkedin.com/in/matheus-oliveira-ferraz",
+    whatsapp: "https://wa.me/5511921848879",
+    email: "mailto:contatomatheus.oferraz@gmail.com",
+    linkedin: "https://www.linkedin.com/in/matheusferrazsp/",
     github: "https://github.com/matheusferrazsp",
   },
 };
@@ -30,148 +28,205 @@ export const PERSONAL_INFO = {
 export const ABOUT_DATA = {
   title: "Background e Visão de Engenharia",
   subtitle:
-    "Sólida base teórica combinada com pragmatismo na resolução de problemas complexos.",
+    "Experiência consolidada ponta a ponta, unindo ecossistema moderno JavaScript a sistemas legados e em produção com PHP e WordPress.",
   paragraphs: [
-    "Com sólida formação acadêmica — cursando Engenharia de Software e Análise e Desenvolvimento de Sistemas (ADS) —, minha abordagem no desenvolvimento full stack vai muito além de escrever código funcional: meu foco está na longevidade, manutenibilidade e integridade arquitetural do software.",
-    "Especializado no ecossistema back-end, infraestrutura e banco de dados, possuo experiência aprofundada na concepção de sistemas capazes de processar grandes volumes de dados, orquestrar integrações entre múltiplas APIs externas e manter alta disponibilidade em ambientes críticos.",
-    "Acredito que o verdadeiro design de software minimalista se reflete tanto na interface clara e sem ruídos quanto no código limpo, desacoplado e tolerante a falhas que roda nos bastidores.",
+    "Atuando como Desenvolvedor Full Stack, foco em criar e escalar aplicações web ponta a ponta. Trago experiência sólida tanto na construção de aplicações modernas com ecossistema JavaScript (Node.js/React) quanto na sustentação e evolução de arquiteturas consolidadas em PHP e WordPress.",
+    "Minha abordagem alia sólida formação acadêmica — em Engenharia de Software e Análise e Desenvolvimento de Sistemas (ADS) — a uma visão pragmática voltada à estabilidade, manutenibilidade e entrega contínua de valor. Atuo em todas as etapas de um produto digital: desde a modelagem de dados até a publicação em produção e manutenção evolutiva.",
+    "Acredito que um software de excelência requer interfaces limpas, responsivas e fluidas no front-end, sustentadas por back-ends seguros, APIs RESTful bem estruturadas e uma infraestrutura monitorada e resiliente.",
   ],
   principles: [
     {
-      icon: Layers,
-      title: "Arquitetura Desacoplada",
-      desc: "Sistemas modulares projetados para evoluir sem acoplamento excessivo ou dívida técnica.",
+      icon: Code2,
+      title: "Ecossistema Moderno",
+      desc: "Desenvolvimento ágil e estruturado de interfaces em React e APIs RESTful/microsserviços com Node.js.",
     },
     {
-      icon: Workflow,
-      title: "Resiliência & Retries",
-      desc: "Integrações assíncronas com tratamento avançado de exceções, filas e idempotência.",
+      icon: Terminal,
+      title: "Sustentação & PHP",
+      desc: "Manutenção, refatoração e evolução de sistemas corporativos em PHP e soluções em WordPress.",
     },
     {
-      icon: ShieldCheck,
-      title: "Segurança por Defeito",
-      desc: "Práticas rigorosas de sanitização, controle de acesso, criptografia e proteção de APIs.",
+      icon: Database,
+      title: "Modelagem Relacional",
+      desc: "Design de bancos de dados, garantia de integridade transacional e otimização de consultas com PostgreSQL e MySQL.",
     },
     {
-      icon: Activity,
-      title: "Performance & Tuning",
-      desc: "Otimização contínua de queries SQL, cache com Redis e latência mínima na borda.",
+      icon: Cloud,
+      title: "DevOps & Governança",
+      desc: "Versionamento com Git e Bitbucket, containerização Docker, servidores Linux e segurança na borda via Cloudflare.",
     },
   ],
 };
 
 export const SOLUTIONS_DATA = [
   {
-    id: "fullstack",
-    title: "Desenvolvedor Full Stack",
-    category: "Engenharia de Ponta a Ponta",
+    id: "frontend",
+    title: "Desenvolvimento Front-end",
+    category: "Interfaces & UX",
     description:
-      "Desenvolvimento de aplicações completas utilizando TypeScript, React, Node.js e PHP. Construção de interfaces de alto contraste e performance (SPA/SSR) totalmente sincronizadas com back-ends robustos e regras de negócio estruturadas.",
+      "Criação de interfaces responsivas, fluidas e componentizadas utilizando React e ecossistema moderno.",
     icon: Code2,
     highlights: [
-      "React / TypeScript SPA",
-      "APIs RESTful & GraphQL",
-      "Regras de Negócio Complexas",
-      "UI/UX Responsivo e Limpo",
+      "React & Componentes Reutilizáveis",
+      "UI/UX Responsivo e Fluido",
+      "Consumo de APIs RESTful",
+      "Styling Moderno com Tailwind CSS",
     ],
   },
   {
-    id: "integrations",
-    title: "Integrações & Orquestração de APIs",
-    category: "Conectividade & Fluxos",
+    id: "backend",
+    title: "Desenvolvimento Back-end & APIs",
+    category: "Arquitetura & Integrações",
     description:
-      "Conexão e sincronização de sistemas heterogêneos, ERPs, gateways de pagamento e serviços de terceiros. Projeto de webhooks resilientes, processamento assíncrono por filas e controle rigoroso de concorrência e taxa de requisições.",
-    icon: Workflow,
-    highlights: [
-      "Orquestração de Microsserviços",
-      "Filas de Processamento (MQ/Redis)",
-      "Webhooks Resilientes",
-      "Idempotência & Tolerância a Falhas",
-    ],
-  },
-  {
-    id: "infrastructure",
-    title: "Infraestrutura & Servidores Linux",
-    category: "DevOps & Cloud Engineering",
-    description:
-      "Administração avançada de ambientes Linux (Debian/Ubuntu), conteinerização com Docker e orquestração de deploys. Configuração de proxies reversos (Nginx), pipelines de CI/CD, monitoramento contínuo e hardening de segurança em nuvem (AWS/VPS).",
+      "Construção de APIs RESTful e microsserviços escaláveis com Node.js e manutenção de sistemas complexos em PHP. Forte vivência com integrações de terceiros (Gateways de pagamento, CRMs, ERPs).",
     icon: Server,
     highlights: [
-      "Linux Server Administration",
-      "Conteinerização com Docker",
-      "Nginx Proxy & Load Balancing",
-      "Hardening & CI/CD Pipelines",
+      "Node.js & APIs RESTful",
+      "Sistemas Complexos em PHP",
+      "Microsserviços Escaláveis",
+      "Integração com Gateways, CRMs e ERPs",
     ],
   },
   {
     id: "database",
-    title: "Modelagem & Administração de Banco de Dados",
-    category: "Persistência & Otimização",
+    title: "Banco de Dados",
+    category: "Persistência & Modelagem",
     description:
-      "Projeto estrutural de bancos relacionais e NoSQL para alta escalabilidade (PostgreSQL, MySQL, Redis). Otimização de consultas lentas (Query Tuning & Indexing), controle de concorrência ACID e estratégias de backup e replicação.",
+      "Modelagem relacional, otimização de consultas e garantia de integridade de dados utilizando PostgreSQL e MySQL.",
     icon: Database,
     highlights: [
-      "PostgreSQL & MySQL Tuning",
-      "Modelagem Relacional de Alta Carga",
-      "Cache Estratégico com Redis",
-      "Integridade Transacional (ACID)",
+      "Modelagem Relacional Sólida",
+      "PostgreSQL & MySQL",
+      "Otimização de Consultas (Tuning)",
+      "Integridade de Dados & ACID",
+    ],
+  },
+  {
+    id: "devops",
+    title: "DevOps, Infra e Controle de Versão",
+    category: "Deploy & Governança",
+    description:
+      "Versionamento seguro com Git e Bitbucket. Containerização com Docker, gestão de tráfego/segurança via Cloudflare e administração de servidores Linux (cPanel, aaPanel).",
+    icon: Cloud,
+    highlights: [
+      "Git & Bitbucket",
+      "Docker & Containerização",
+      "Cloudflare Security & Traffic",
+      "Servidores Linux (cPanel, aaPanel)",
+    ],
+  },
+  {
+    id: "wordpress",
+    title: "Ecossistema WordPress",
+    category: "CMS & Performance",
+    description:
+      "Criação de temas, plugins customizados e otimização de performance para e-commerces e portais de alto tráfego.",
+    icon: Layers,
+    highlights: [
+      "Temas & Plugins Customizados",
+      "WooCommerce & E-commerce",
+      "Otimização de Performance",
+      "Portais de Alto Tráfego",
     ],
   },
 ];
 
+export const RECENT_WORK_DATA = [
+  {
+    id: "ecommerce-automation",
+    title: "Integração e Automação de E-commerce",
+    category: "Orquestração & Pagamentos",
+    description:
+      "Orquestração de APIs para sistemas de pagamento e emissão de notas fiscais, automatizando o fluxo operacional de lojas virtuais.",
+    technologies: ["Node.js", "REST APIs"],
+    icon: Workflow,
+  },
+  {
+    id: "corporate-platform",
+    title: "Evolução de Plataforma Corporativa",
+    category: "Refatoração & Sistemas Legados",
+    description:
+      "Manutenção e refatoração de código legado, otimização de banco de dados e implementação de novas features em sistema financeiro/logístico.",
+    technologies: ["PHP", "MySQL", "Bitbucket"],
+    icon: Server,
+  },
+  {
+    id: "wordpress-solutions",
+    title: "Soluções Customizadas em WordPress",
+    category: "Funcionalidades Sob Medida & Infra",
+    description:
+      "Desenvolvimento de funcionalidades sob medida e gestão de infraestrutura de hospedagem para alta disponibilidade.",
+    technologies: ["WordPress", "PHP", "Cloudflare"],
+    icon: Layers,
+  },
+];
+
 export const TECH_STACK = [
-  { name: "PHP", category: "Core Backend", level: "Avançado", icon: Terminal },
+  {
+    name: "React",
+    category: "Linguagens & Front-end",
+    level: "Avançado",
+    icon: Code2,
+  },
   {
     name: "Node.js",
-    category: "Core Backend",
+    category: "Back-end & APIs",
     level: "Avançado",
     icon: Server,
   },
-  { name: "TypeScript", category: "Language", level: "Avançado", icon: Code2 },
   {
-    name: "JavaScript (ES6+)",
-    category: "Language",
+    name: "PHP",
+    category: "Back-end & APIs",
+    level: "Avançado",
+    icon: Terminal,
+  },
+  {
+    name: "JavaScript",
+    category: "Linguagens & Front-end",
+    level: "Avançado",
+    icon: Code2,
+  },
+  {
+    name: "TypeScript",
+    category: "Linguagens & Front-end",
     level: "Avançado",
     icon: Code2,
   },
   {
     name: "PostgreSQL",
-    category: "Database",
+    category: "Bancos de Dados",
     level: "Avançado",
     icon: Database,
   },
-  { name: "MySQL", category: "Database", level: "Avançado", icon: Database },
-  { name: "Redis", category: "Cache / Queue", level: "Sólido", icon: Cpu },
   {
-    name: "Linux Administration",
-    category: "Infrastructure",
+    name: "MySQL",
+    category: "Bancos de Dados",
     level: "Avançado",
-    icon: Terminal,
+    icon: Database,
   },
-  { name: "Docker", category: "Containers", level: "Sólido", icon: Cloud },
+  { name: "Docker", category: "DevOps & Nuvem", level: "Sólido", icon: Cloud },
   {
-    name: "Nginx",
-    category: "Proxy / Web Server",
-    level: "Avançado",
-    icon: Server,
-  },
-  { name: "React", category: "Frontend", level: "Sólido", icon: Code2 },
-  {
-    name: "Tailwind CSS",
-    category: "Styling",
-    level: "Avançado",
-    icon: Layers,
-  },
-  {
-    name: "Git & CI/CD",
-    category: "DevOps",
+    name: "Git",
+    category: "DevOps & Nuvem",
     level: "Avançado",
     icon: GitBranch,
   },
   {
-    name: "RESTful APIs / Webhooks",
-    category: "Architecture",
-    level: "Especialista",
-    icon: Workflow,
+    name: "Bitbucket",
+    category: "DevOps & Nuvem",
+    level: "Avançado",
+    icon: GitBranch,
+  },
+  {
+    name: "Cloudflare",
+    category: "DevOps & Nuvem",
+    level: "Avançado",
+    icon: ShieldCheck,
+  },
+  {
+    name: "WordPress",
+    category: "Back-end & APIs",
+    level: "Avançado",
+    icon: Layers,
   },
 ];
