@@ -15,13 +15,13 @@ export const About: React.FC = () => {
     const items = gsap.utils.toArray('.about-reveal');
     gsap.from(items, {
       opacity: 0,
-      y: 40,
-      duration: 1,
-      stagger: 0.18,
-      ease: 'power3.out',
+      y: 25,
+      duration: 0.55,
+      stagger: 0.06,
+      ease: 'power2.out',
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: 'top 80%',
+        start: 'top 92%',
         end: 'bottom 20%',
         toggleActions: 'play none none none',
       },

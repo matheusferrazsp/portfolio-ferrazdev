@@ -48,13 +48,13 @@ export const Contact: React.FC = () => {
       const elements = gsap.utils.toArray(".contact-anim");
       gsap.from(elements, {
         opacity: 0,
-        y: 60,
-        duration: 1.1,
-        stagger: 0.15,
-        ease: "power3.out",
+        y: 25,
+        duration: 0.55,
+        stagger: 0.06,
+        ease: "power2.out",
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 85%",
+          start: "top 92%",
           end: "bottom 20%",
           toggleActions: "play none none none",
         },

@@ -9,15 +9,15 @@ export const Hero: React.FC = () => {
 
   useGSAP(
     () => {
-      // GSAP subtle entrance animation (fade in + vertical upward motion)
+      // GSAP entrance animation (fast and crisp so mobile/in-app webviews render immediately without long blank screens)
       const elements = gsap.utils.toArray(".hero-anim");
       gsap.from(elements, {
         opacity: 0,
-        y: 40,
-        duration: 1.15,
-        stagger: 0.16,
-        ease: "power3.out",
-        delay: 0.15,
+        y: 25,
+        duration: 0.55,
+        stagger: 0.05,
+        ease: "power2.out",
+        delay: 0.02,
         clearProps: "all",
       });
 

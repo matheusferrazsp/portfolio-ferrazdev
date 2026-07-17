@@ -17,13 +17,13 @@ export const RecentWork: React.FC = () => {
 
       gsap.from(cards, {
         opacity: 0,
-        y: 45,
-        duration: 0.95,
-        stagger: 0.16,
-        ease: "power3.out",
+        y: 25,
+        duration: 0.55,
+        stagger: 0.06,
+        ease: "power2.out",
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 78%",
+          start: "top 92%",
           end: "bottom 20%",
           toggleActions: "play none none none",
         },

@@ -15,14 +15,14 @@ export const TechStack: React.FC = () => {
     const items = gsap.utils.toArray('.stack-item');
     gsap.from(items, {
       opacity: 0,
-      scale: 0.95,
-      y: 30,
-      duration: 0.8,
-      stagger: 0.08,
-      ease: 'power3.out',
+      scale: 0.97,
+      y: 20,
+      duration: 0.5,
+      stagger: 0.05,
+      ease: 'power2.out',
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: 'top 80%',
+        start: 'top 92%',
         end: 'bottom 20%',
         toggleActions: 'play none none none',
       },
