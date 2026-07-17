@@ -109,33 +109,82 @@ export const Navbar: React.FC = () => {
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-[#0a0c10] border-b border-[#1e293b] px-6 py-6 mt-3 animate-fadeIn">
-          <nav className="flex flex-col gap-4 font-mono text-sm">
+      {/* Mobile Menu Backdrop Overlay */}
+      <div
+        className={`fixed inset-0 bg-black/70 backdrop-blur-xs z-[55] transition-opacity duration-300 md:hidden ${
+          mobileMenuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setMobileMenuOpen(false)}
+        aria-hidden="true"
+      />
+
+      {/* Mobile Menu Slide-over Drawer (70% width, 100% height from right to left) */}
+      <div
+        className={`fixed top-0 right-0 bottom-0 w-[70%] max-w-sm h-full bg-[#090b10] border-l border-[#1e293b] shadow-2xl z-[60] flex flex-col justify-between p-6 overflow-y-auto transform-gpu transition-transform duration-300 ease-out md:hidden ${
+          mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div>
+          {/* Drawer Header (Logo + Close Button) */}
+          <div className="flex items-center justify-between pb-6 border-b border-[#181d28]">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded bg-[#111318] border border-[#222834] flex items-center justify-center text-sky-400 p-1.5 overflow-hidden">
+                <img
+                  src="/favicon.svg"
+                  alt="Logo"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <span className="font-mono text-xs font-semibold tracking-wider text-slate-200 uppercase">
+                Menu
+              </span>
+            </div>
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(false)}
+              className="p-2 rounded bg-[#131722] border border-[#222834] text-slate-400 hover:text-white transition-colors focus:outline-none"
+              aria-label="Fechar Menu"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* Navigation Links */}
+          <nav className="flex flex-col gap-1 mt-6 font-mono text-sm">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-slate-300 hover:text-sky-400 py-2 border-b border-[#181d28] transition-colors"
+                className="text-slate-400 hover:text-sky-400 py-3 px-3 rounded hover:bg-[#111520] transition-all flex items-center justify-between group"
               >
-                {link.name}
+                <span>{link.name}</span>
+                <span className="text-xs text-slate-600 group-hover:text-sky-400 transition-colors">
+                  →
+                </span>
               </a>
             ))}
-            <div className="pt-2">
-              <a
-                href="#contatos"
-                onClick={(e) => handleNavClick(e, "#contatos")}
-                className="flex items-center justify-center gap-2 w-full py-2.5 rounded bg-sky-500/10 border border-sky-500/30 text-sky-300 text-xs font-mono font-semibold"
-              >
-                <span>Conectar com Matheus</span>
-                <ArrowUpRight className="w-4 h-4" />
-              </a>
-            </div>
           </nav>
         </div>
-      )}
+
+        {/* Drawer Footer (Status + CTA) */}
+        <div className="pt-6 border-t border-[#181d28] flex flex-col gap-4">
+          <div className="inline-flex items-center gap-2 px-3 py-2 rounded bg-[#111622] border border-[#20293a] text-slate-300 font-mono text-[11px]">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+            <span className="truncate">{PERSONAL_INFO.status}</span>
+          </div>
+          <a
+            href="#contatos"
+            onClick={(e) => handleNavClick(e, "#contatos")}
+            className="flex items-center justify-center gap-2 w-full py-3 rounded bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-mono font-bold tracking-wide transition-all shadow-[0_0_15px_rgba(56,189,248,0.25)]"
+          >
+            <span>Iniciar Conexão</span>
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
+        </div>
+      </div>
     </header>
   );
 };
