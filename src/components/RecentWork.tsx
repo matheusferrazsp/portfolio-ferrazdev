@@ -39,8 +39,8 @@ export const RecentWork: React.FC = () => {
       ref={containerRef}
       className="py-28 bg-[#090b0f] border-b border-[#161a24] relative overflow-hidden"
     >
-      {/* Subtle Background Glow */}
-      <div className="absolute top-1/3 right-1/4 w-150 h-100 bg-sky-500/5 rounded-full blur-[160px] pointer-events-none -z-10" />
+      {/* Subtle Background Glow (Hardware accelerated) */}
+      <div className="absolute top-1/3 right-1/4 w-150 h-100 bg-sky-500/5 rounded-full blur-[160px] pointer-events-none -z-10 transform-gpu" />
 
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         {/* Section Header */}

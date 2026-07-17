@@ -13,14 +13,18 @@ import { Footer } from './components/Footer';
 // Register GSAP plugins globally once
 gsap.registerPlugin(ScrollTrigger);
 
+// Prevent layout thrashing on mobile when address bar hides/shows during scroll
+ScrollTrigger.config({
+  ignoreMobileResize: true,
+});
+
 export function App() {
   useEffect(() => {
-    // Refresh ScrollTrigger instances when layout settles or window resizes
-    const handleResize = () => {
+    // Refresh ScrollTrigger cleanly once after initial layout/fonts finish loading
+    const timer = setTimeout(() => {
       ScrollTrigger.refresh();
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    }, 500);
+    return () => clearTimeout(timer);
   }, []);
 
   return (

@@ -107,8 +107,8 @@ export const Contact: React.FC = () => {
       ref={containerRef}
       className="py-28 bg-[#070709] relative overflow-hidden"
     >
-      {/* Background Subtle Gradient */}
-      <div className="absolute bottom-0 right-0 w-125 h-125 bg-sky-500/5 rounded-full blur-[150px] pointer-events-none -z-10" />
+      {/* Background Subtle Gradient (Hardware accelerated) */}
+      <div className="absolute bottom-0 right-0 w-125 h-125 bg-sky-500/5 rounded-full blur-[150px] pointer-events-none -z-10 transform-gpu" />
 
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         {/* Section Header */}

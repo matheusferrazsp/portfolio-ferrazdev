@@ -29,14 +29,26 @@ export const TechStack: React.FC = () => {
       clearProps: 'all'
     });
 
-    // 2. Continuous slow, sophisticated marquee animation
+    // 2. Continuous slow marquee animation (paused when off-screen to save mobile CPU/GPU)
     if (marqueeRef.current) {
       const totalWidth = marqueeRef.current.scrollWidth / 2;
-      gsap.to(marqueeRef.current, {
+      const tween = gsap.to(marqueeRef.current, {
         x: -totalWidth,
         duration: 35,
         repeat: -1,
         ease: 'none',
+        force3D: true,
+        paused: true,
+      });
+
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: 'top 100%',
+        end: 'bottom 0%',
+        onEnter: () => tween.play(),
+        onLeave: () => tween.pause(),
+        onEnterBack: () => tween.play(),
+        onLeaveBack: () => tween.pause(),
       });
     }
   }, { scope: sectionRef });
@@ -115,7 +127,7 @@ export const TechStack: React.FC = () => {
         <div className="absolute left-0 top-0 bottom-0 w-24 bg-linear-to-r from-[#090b0f] to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-linear-to-l from-[#090b0f] to-transparent z-10 pointer-events-none" />
         
-        <div className="flex w-max" ref={marqueeRef}>
+        <div className="flex w-max transform-gpu will-change-transform" ref={marqueeRef}>
           {/* Double array for seamless loop */}
           {[...TECH_STACK, ...TECH_STACK].map((tech, idx) => {
             const IconComp = tech.icon;
