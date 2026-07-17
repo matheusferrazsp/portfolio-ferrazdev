@@ -11,22 +11,25 @@ export const TechStack: React.FC = () => {
   const marqueeRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    // 1. Staggered reveal of the cards grid
-    const items = gsap.utils.toArray('.stack-item');
-    gsap.from(items, {
-      opacity: 0,
-      scale: 0.97,
-      y: 20,
-      duration: 0.5,
-      stagger: 0.05,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: 'top 92%',
-        end: 'bottom 20%',
-        toggleActions: 'play none none none',
-      },
-      clearProps: 'all'
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 768px)", () => {
+      // 1. Staggered reveal of the cards grid on desktop
+      const items = gsap.utils.toArray('.stack-item');
+      gsap.from(items, {
+        opacity: 0,
+        scale: 0.97,
+        y: 20,
+        duration: 0.5,
+        stagger: 0.05,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 92%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none none',
+        },
+        clearProps: 'all'
+      });
     });
 
     // 2. Continuous slow marquee animation (paused when off-screen to save mobile CPU/GPU)
