@@ -127,7 +127,7 @@ export const Navbar: React.FC = () => {
           <>
             {/* Mobile Menu Backdrop Overlay */}
             <div
-              className={`fixed inset-0 bg-black/70 backdrop-blur-xs z-[9998] transition-opacity duration-300 md:hidden ${
+              className={`fixed inset-0 bg-black/70 backdrop-blur-xs z-9998 transition-opacity duration-300 md:hidden ${
                 mobileMenuOpen
                   ? "opacity-100 pointer-events-auto"
                   : "opacity-0 pointer-events-none"
@@ -138,7 +138,7 @@ export const Navbar: React.FC = () => {
 
             {/* Mobile Menu Slide-over Drawer (70% width, 100% height from right to left) */}
             <div
-              className={`fixed top-0 right-0 bottom-0 w-[70%] max-w-sm h-full bg-[#090b10] border-l border-[#1e293b] shadow-2xl z-[9999] flex flex-col justify-between p-6 overflow-y-auto transform-gpu transition-transform duration-300 ease-out md:hidden ${
+              className={`fixed top-0 right-0 bottom-0 w-[70%] max-w-sm h-full bg-[#090b10] border-l border-[#1e293b] shadow-2xl z-9999 flex flex-col justify-between p-6 overflow-y-auto transform-gpu transition-transform duration-300 ease-out md:hidden ${
                 mobileMenuOpen ? "translate-x-0" : "translate-x-full"
               }`}
             >
